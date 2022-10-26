@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const courses = require('./courses.json')
-const slider = require('./courses.json')
 const app = express()
 app.use(cors())
 const port = 5000
@@ -17,9 +16,6 @@ app.get('/courses', (req, res) => {
     res.send(courses);
 })
 
-app.get('/slider', (req, res) => {
-    res.send(slider);
-})
 
 app.get('/courses/:id', (req, res) => {
     const id = parseInt(req.params.id);
